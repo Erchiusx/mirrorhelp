@@ -43,7 +43,7 @@ mkdir ~/bin
 PATH=~/bin:$PATH
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 ## 如果上述 URL 不可访问，可以用下面的：
-## curl -sSL  'https://gerrit-googlesource.proxy.ustclug.org/git-repo/+/master/repo?format=TEXT' |base64 -d > ~/bin/repo
+## curl -sSL 'https://gerrit-googlesource.proxy.ustclug.org/git-repo/+/main/repo?format=TEXT' | base64 -d > ~/bin/repo
 chmod a+x ~/bin/repo
 ```
 
@@ -57,9 +57,9 @@ cd WORKING_DIRECTORY
 初始化仓库：
 
 ```shell
+# 如果提示无法连接到 gerrit.googlesource.com，可以设置 REPO_URL 环境变量：
+export REPO_URL=https://gerrit-googlesource.proxy.ustclug.org/git-repo
 repo init -u git://mirrors.ustc.edu.cn/aosp/platform/manifest
-## 如果提示无法连接到 gerrit.googlesource.com，可以编辑 ~/bin/repo，把 REPO_URL 一行替换成下面的：
-## REPO_URL = 'https://gerrit-googlesource.proxy.ustclug.org/git-repo'
 ```
 
 如果需要某个特定的 Android 版本

@@ -14,7 +14,7 @@ x86_64, aarch64
 
 ## 收录版本
 
-20.03-LTS, 20.09, 21.03, 22.03-LTS, 22.09, 23.03, 23.09
+20.03-LTS, 20.09, 21.03, 21.09, 22.03-LTS, 22.09, 23.03, 23.09, 24.03-LTS, 24.09
 
 ## 使用说明
 
@@ -25,8 +25,7 @@ x86_64, aarch64
 使用以下命令替换默认配置
 
 ```shell
-sudo sed -e 's|http://repo.openeuler.org/|https://mirrors.ustc.edu.cn/openeuler/|g' \
-         -e 's|https://mirrors.openeuler.org/|https://mirrors.ustc.edu.cn/openeuler/|g' \
+sudo sed -E 's#https?://(repo|mirrors)\.openeuler\.org/#https://mirrors.ustc.edu.cn/openeuler/#g' \
          -i.bak \
          /etc/yum.repos.d/openEuler.repo
 ```
